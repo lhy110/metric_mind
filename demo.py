@@ -26,9 +26,9 @@ def steering_source():
 
 
 def chart(values, labels, unit, colors=None):
-    fig=go.Figure(go.Bar(x=labels,y=values,marker_color=colors or ['#7187ac','#8bf0c9'],width=.5,
+    fig=go.Figure(go.Bar(x=labels,y=values,marker_color=colors or ['#8096b7','#087f6d'],width=.5,
         text=[f'${v:.2f}' if unit=='$' else f'{v:.2f}%' for v in values],textposition='outside'))
-    fig.update_layout(height=255,margin=dict(l=10,r=10,t=35,b=10),paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',font=dict(color='#c8d5e5',size=15),yaxis=dict(range=[0,max(values)*1.25],gridcolor='#233146',title='Revenue / visitor ($)' if unit=='$' else 'Conversion (%)'),xaxis=dict(fixedrange=True),showlegend=False)
+    fig.update_layout(height=255,margin=dict(l=10,r=10,t=35,b=10),paper_bgcolor='rgba(0,0,0,0)',plot_bgcolor='rgba(0,0,0,0)',font=dict(color='#33485e',size=15),yaxis=dict(range=[0,max(values)*1.25],gridcolor='#e1e7ef',title='Revenue / visitor ($)' if unit=='$' else 'Conversion (%)'),xaxis=dict(fixedrange=True),showlegend=False)
     return fig
 
 
@@ -37,7 +37,7 @@ def render_demo(df):
     st.session_state.setdefault('business_brief',DEFAULT_BUSINESS)
     st.session_state.setdefault('design_prompt',DEFAULT_DESIGN)
     stage=st.session_state.stage; s=summarize(df); a,b=s.loc['A'],s.loc['B']; r=recommend(df)
-    st.markdown('''<style>.demo-hero{background:radial-gradient(ellipse at top right,#21473955,transparent 65%),#131d2b;border:1px solid #2c4352;border-radius:20px;padding:24px 32px;margin:8px 0 18px}.demo-number{font-size:76px;font-weight:750;letter-spacing:-4px;line-height:1.1;color:#8bf0c9}.demo-label{color:#aebed2;font-size:15px;margin-top:8px}.demo-title{font-size:29px;font-weight:650;letter-spacing:-.8px;margin:8px 0}.demo-copy{color:#c0cddd;font-size:17px;line-height:1.55}.stage-track{display:flex;gap:10px;margin:18px 0}.stage-item{flex:1;padding:13px;border-bottom:3px solid #283448;color:#8092ac}.stage-item.active{border-color:#8bf0c9;color:#c5ffe9;background:#14251f}.evidence-label{font-size:11px;letter-spacing:1.5px;color:#8bf0c9}@media(max-width:700px){.demo-number{font-size:55px}.stage-item{font-size:11px;padding:8px}.demo-hero{padding:18px}}
+    st.markdown('''<style>.demo-hero{background:radial-gradient(ellipse at top right,#d1eee177,transparent 65%),#ffffff;border:1px solid #d5e2e9;border-radius:20px;padding:24px 32px;margin:8px 0 18px}.demo-number{font-size:76px;font-weight:750;letter-spacing:-4px;line-height:1.1;color:#087f6d}.demo-label{color:#526478;font-size:15px;margin-top:8px}.demo-title{font-size:29px;font-weight:650;letter-spacing:-.8px;margin:8px 0}.demo-copy{color:#3e536b;font-size:17px;line-height:1.55}.stage-track{display:flex;gap:10px;margin:18px 0}.stage-item{flex:1;padding:13px;border-bottom:3px solid #d9e3ec;color:#526478}.stage-item.active{border-color:#087f6d;color:#075e50;background:#e8f5ef}.evidence-label{font-size:11px;letter-spacing:1.5px;color:#087f6d}@media(max-width:700px){.demo-number{font-size:55px}.stage-item{font-size:11px;padding:8px}.demo-hero{padding:18px}}
 </style>''',unsafe_allow_html=True)
     if stage == 0:
         from story import render_story
@@ -65,9 +65,9 @@ def render_demo(df):
         st.caption('Say: “The AI increased conversion by 20%. Most dashboards would celebrate. MetricMind asks one more question.”')
     elif stage==2:
         drop=100*(b.rpv/a.rpv-1)
-        st.markdown(f'<div class="demo-hero"><div class="evidence-label">OBSERVED / BUSINESS OUTCOME</div><div class="demo-number" style="color:#ffb58a">{drop:.0f}%</div><div class="demo-title">More orders. Less revenue per visitor.</div><div class="demo-copy">Smaller purchases erased the conversion gain. Make revenue per visitor the primary metric; keep returns as a guardrail.</div></div>',unsafe_allow_html=True)
+        st.markdown(f'<div class="demo-hero"><div class="evidence-label">OBSERVED / BUSINESS OUTCOME</div><div class="demo-number" style="color:#b8522b">{drop:.0f}%</div><div class="demo-title">More orders. Less revenue per visitor.</div><div class="demo-copy">Smaller purchases erased the conversion gain. Make revenue per visitor the primary metric; keep returns as a guardrail.</div></div>',unsafe_allow_html=True)
         left,right=st.columns([2,1])
-        with left: st.plotly_chart(chart([a.rpv,b.rpv],['A · Original','B · Conversion optimized'],'$', ['#7187ac','#ffb58a']),width='stretch')
+        with left: st.plotly_chart(chart([a.rpv,b.rpv],['A · Original','B · Conversion optimized'],'$', ['#8096b7','#b8522b']),width='stretch')
         with right:
             st.metric('Average order value',f'${b.aov:.0f}',f'{b.aov-a.aov:.0f} vs A')
             st.metric('Less revenue / 10,000 visitors',f'${(a.rpv-b.rpv)*10000:,.0f}')

@@ -67,11 +67,11 @@ The stage-four previews are **current B** and **proposed C**; A is the original 
 ## Files
 
 - `demo.py`: four-stage guided presentation with evidence audit and speaker cues.
-- `app.py`: dark dashboard, Plotly charts, workflow state, downloads, and experiment panel.
+- `app.py`: light dashboard, Plotly charts, workflow state, downloads, and experiment panel.
 - `data_generator.py`: seeded visitor-level dataset; run `python data_generator.py` to recreate the included CSV.
 - `analysis.py`: summaries, independent-sample Welch intervals, segment scan, deterministic diagnosis and experiment brief.
 - `store.py`: offline CSS storefront illustrations and diagnosis-directed redesign.
-- `.streamlit/config.toml`: dark theme and disabled usage telemetry.
+- `.streamlit/config.toml`: light theme and disabled usage telemetry.
 - `test_app.py`: accounting, discovery, storefront, and Streamlit interaction tests.
 - `test_results.txt`: results from the final test run.
 - `requirements.txt`: exact versions tested in the build environment.
@@ -111,3 +111,7 @@ python -m unittest -v test_app.py
 ```
 
 The tests cover exact accounting, discovery ranking and decomposition, all four guided stages, back/reset, every explorer button and chart choice, generated experiment text, and isolated storefront CSS. Streamlit server startup and HTTP root/health endpoints were checked successfully. Browser rendering was attempted, but the browser preview service does not contain a Python runtime and could not launch Streamlit. Browser visual inspection remains unverified. The actual app was executed via Streamlit AppTest and a local server health check; this is not a screenshot review.
+
+## Light presentation refresh
+
+The interface uses a light background, white panels and teal accents. Page 0 is now a short visual customer story and proposed Coframe → MetricMind → human review workflow. Source and scope details remain in an expander. The startup file remains `app.py`. If a saved Streamlit appearance preference overrides the theme, choose Light in Settings.

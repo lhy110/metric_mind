@@ -2,21 +2,21 @@ test_accounting (test_app.MetricMindTests.test_accounting) ... ok
 test_css_isolation (test_app.MetricMindTests.test_css_isolation) ... ok
 test_design_changes (test_app.MetricMindTests.test_design_changes) ... ok
 test_discovery (test_app.MetricMindTests.test_discovery) ... ok
-test_guided_demo (test_app.MetricMindTests.test_guided_demo) ... 2026-10-10 17:42:10.656 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_guided_demo (test_app.MetricMindTests.test_guided_demo) ... 2026-10-10 18:08:01.942 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_human_steering (test_app.MetricMindTests.test_human_steering) ... 2026-10-10 17:42:15.132 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_human_steering (test_app.MetricMindTests.test_human_steering) ... 2026-10-10 18:08:05.000 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 test_presentation_arithmetic (test_app.MetricMindTests.test_presentation_arithmetic) ... ok
 test_public_launcher (test_app.MetricMindTests.test_public_launcher) ... ok
-test_session_isolation (test_app.MetricMindTests.test_session_isolation) ... 2026-10-10 17:42:22.969 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
-2026-10-10 17:42:25.856 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_session_isolation (test_app.MetricMindTests.test_session_isolation) ... 2026-10-10 18:08:09.410 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+2026-10-10 18:08:10.614 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_story_page (test_app.MetricMindTests.test_story_page) ... 2026-10-10 17:42:28.574 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_story_page (test_app.MetricMindTests.test_story_page) ... 2026-10-10 18:08:11.406 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
-test_workflow (test_app.MetricMindTests.test_workflow) ... 2026-10-10 17:42:32.401 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+test_workflow (test_app.MetricMindTests.test_workflow) ... 2026-10-10 18:08:12.361 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
 ok
 
 ----------------------------------------------------------------------
-Ran 11 tests in 27.368s
+Ran 11 tests in 15.229s
 
 OK
