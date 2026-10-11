@@ -1,0 +1,10 @@
+mm/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.streamlit/secrets.toml
+*.log
+package.json
+preview.sh
